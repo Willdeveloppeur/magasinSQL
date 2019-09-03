@@ -1,0 +1,58 @@
+create database magasin;
+
+
+| Table    | Create Table                                                                                                                                                                                              |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| adresses | CREATE TABLE `adresses` (
+  `numero_de_rue` int(11) NOT NULL,
+  `nom_de_rue` varchar(255) NOT NULL,
+  `code_postal` int(5) NOT NULL,
+  `ville` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 |
+
+
+
++------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| chaussures | CREATE TABLE `chaussures` (
+  `marque` varchar(255) NOT NULL,
+  `prix` int(11) NOT NULL,
+  `modele` varchar(255) NOT NULL,
+  `couleur` varchar(255) NOT NULL,
+  `id_pointure` int(11) NOT NULL,
+  `id_chaussures` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id_chaussures`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 |
+
+
++---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clients | CREATE TABLE `clients` (
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `mail` varchar(255) NOT NULL,
+  `telephone` int(10) NOT NULL,
+  `date_de_naissance` date NOT NULL,
+  `id_client` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id_client`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 |
+
+
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                          |
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| commande | CREATE TABLE `commande` (
+  `numero` int(11) NOT NULL,
+  `commentaire` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 |
++----------+-----------------------------
+
+
++----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                                 |
++----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| pointure | CREATE TABLE `pointure` (
+  `pointure_chaussure` int(11) NOT NULL,
+  `pointure_client` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 |
++----------+-----------------------------
+
+
